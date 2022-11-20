@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Country"
+    jcr:title="News Feed"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-        granite:class="cmp-form-text__editDialog"
+        granite:class="cmp-list__editor"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
@@ -13,9 +13,9 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <properties
+                    <listSettings
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Properties"
+                        jcr:title="News List Settings"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
@@ -28,22 +28,18 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <countries
+                                            <sourcepath
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Countries"
-                                                name="./countries">
-                                                <datasource
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="anf-code-challenge/json"
-                                                    path="/content/dam/anf-code-challenge/exercise-1/countries.json/jcr:content/renditions/original"/>
-                                            </countries>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Path from where the news items will be picked up"
+                                                fieldLabel="News Source Path"
+                                                name="./sourcepath"/>
                                         </items>
                                     </column>
                                 </items>
                             </columns>
                         </items>
-                    </properties>
+                    </listSettings>
                 </items>
             </tabs>
         </items>

@@ -1,0 +1,18 @@
+<div class="cmp-newsfeed" data-cmp-is="newsfeed">
+    <h2 class="cmp-newsfeed">News Feed Component</h2>
+    <div class="cmp-newsfeed" data-sly-test="${properties.sourcepath}">
+
+        <div class="cmp-newsfeed__items" data-sly-use.model="com.anf.core.models.NewsFeed" data-sly-test="${model.newsList}">
+
+            <div data-sly-list.item="${model.newsList}">
+            <a href="${item.url}" target="_blank">${item.title}</a>
+                <p> ${item.currentDate} || ${item.author}</p>
+                <p><div  align="left">Description: ${item.description}</div>
+                <div align="left"><img src="${item.urlImage}" width="400" height="400"/></div>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

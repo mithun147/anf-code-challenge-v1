@@ -1,4 +1,6 @@
-
+<!-- Country values is printed in the form based on the the value selected in drop down field
+ of the country dialog. Same value is passed on as request parameter when form is submitted  -->
 <div class="country__cmp">
-	Country:
+	Country:${properties.countries}
+    <input type="hidden" name="country" value="${properties.countries}">
 </div>
